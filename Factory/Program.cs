@@ -21,7 +21,16 @@ namespace Factory
         static void PrintCarInformation(ICarFactory factory)
         {
             Console.WriteLine("----YEAH!----");
-            Console.WriteLine("This car has {0} door, {1} engine and {2} INTERIOOOOR!", factory.GetDoor(), factory.GetEngine(), factory.GetInteroir());
+            var door = factory.GetDoor();
+            Console.WriteLine("You have {0}", door.Name);
+            var engine = factory.GetEngine();
+            Console.WriteLine("With {0} that has {1} horse powers!", engine.Name, engine.Power);
+            var interior = factory.GetInteroir();
+            Console.WriteLine("And finally your interior is {0} / 10", interior.Beautiness);
+            Console.WriteLine("We call that interior {0}", interior.Name);
+            Console.WriteLine("It was {0}", factory.GetType().ToString());
+            Console.WriteLine("----See you again!----");
+            Console.WriteLine();
         }
     }
 }
